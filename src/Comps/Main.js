@@ -1,5 +1,5 @@
-// Main.js
 import React from "react";
+import { Link } from "react-router-dom"; 
 
 function Main() {
   return (
@@ -12,7 +12,9 @@ function Main() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-          <button>Reserve a Table</button>
+          <Link to="/reservation">
+            <button>Reserve a Table</button>
+          </Link>
         </div>
         <div className="col col-4-md">
           <div className="image-placeholder"></div>
@@ -93,8 +95,7 @@ function Main() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
         </div>
-        <div className="col col-6-md">
-        </div>
+        <div className="col col-6-md"></div>
       </section>
     </main>
   );
