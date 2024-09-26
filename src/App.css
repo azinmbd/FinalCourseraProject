@@ -1,23 +1,33 @@
+/* General Styling */
+.nav-links{
+  width: fit-content;
+}
+
 .link {
   text-decoration: none;
   color: black;
   font-weight: bold;
 }
+
 .link:hover {
   color: green;
   transition: all 500ms;
 }
+
 li {
   list-style-type: none;
   margin-left: 20px;
 }
+
 ul {
   display: flex;
 }
+
 .header {
   display: flex;
   justify-content: center;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -33,30 +43,87 @@ ul {
   margin-right: -15px;
 }
 
+.logo-container {
+  width: fit-content;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+}
+
 .col {
   flex: 1;
   padding: 15px;
 }
 
+/* Column Classes */
 .col-2-md {
   flex: 0 0 16.66%;
   max-width: 16.66%;
 }
 
 .col-4-md {
-  flex: 0 0 33.33%;
+  flex: 0 0 30.33%;
   max-width: 33.33%;
 }
 
 .col-8-md {
-  flex: 0 0 66.66%;
+  flex: 0 0 65.66%;
   max-width: 66.66%;
 }
 
+.col-12-md {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* Specials Section Styles */
+.special-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+.special-card h3 {
+  font-size: 1.2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.special-card button {
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Testimonials Section Styles */
+.testimonial-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+}
+
+.testimonial-card button {
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive Media Queries */
 @media (max-width: 767px) {
   .col-2-md,
   .col-4-md,
-  .col-8-md {
+  .col-8-md,
+  .col-12-md {
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -67,12 +134,19 @@ ul {
     flex: 0 0 16.66%;
     max-width: 16.66%;
   }
+  
   .col-4-md {
     flex: 0 0 33.33%;
     max-width: 33.33%;
   }
+  
   .col-8-md {
     flex: 0 0 66.66%;
     max-width: 66.66%;
+  }
+  
+  .col-12-md {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
