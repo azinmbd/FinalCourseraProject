@@ -1,0 +1,11 @@
+#confirmation {
+    padding: 5em 0 10em 0;
+}
+
+#confirmation span {
+    color: var(--highlight2);
+    font-size: var(--size-2xl);
+    width: 100%;
+    text-align: center;
+    display: block
+}

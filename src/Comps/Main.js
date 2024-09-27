@@ -1,104 +1,68 @@
-import React from "react";
-import { Link } from "react-router-dom"; 
+import Home from '../Pages/Home'
+import Booking from '../Pages/Booking'
+import { Route, Routes, useNavigate } from 'react-router-dom'
+import { useState, useReducer } from 'react'
+import { fetchAPI, submitAPI } from './API'
+import ConfirmedBooking from '../Pages/ConfirmedBooking'
 
-function Main() {
-  return (
-    <main className="container">
-      <section className="hero row">
-        <div className="col col-8-md">
-          <h1>Little Lemon</h1>
-          <h3>Chicago</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <Link to="/reservation">
-            <button>Reserve a Table</button>
-          </Link>
-        </div>
-        <div className="col col-4-md">
-          <div className="image-placeholder"></div>
-        </div>
-      </section>
-
-      <section>
-        <div className="col-12">
-          <h2>Specials</h2>
-          <button>View More</button>
-        </div>
-        <div className="specials row">
-          <div className="col col-4-md">
-            <div className="special-card">
-              <h3>
-                Greek Salad <span>$12.5</span>
-              </h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <button>Order a delivery</button>
-            </div>
-          </div>
-          <div className="col col-4-md">
-            <div className="special-card">
-              <h3>
-                Greek Salad <span>$12.5</span>
-              </h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <button>Order a delivery</button>
-            </div>
-          </div>
-          <div className="col col-4-md">
-            <div className="special-card">
-              <h3>
-                Greek Salad <span>$12.5</span>
-              </h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <button>Order a delivery</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="testimonials row">
-        <div className="col-12-md">
-          <h2>Testimonials</h2>
-        </div>
-        <div className="col col-2-md">
-          <div className="testimonial-card">
-            <p>Text</p>
-            <button>Order a delivery</button>
-          </div>
-        </div>
-        <div className="col col-2-md">
-          <div className="testimonial-card">
-            <p>Text</p>
-            <button>Order a delivery</button>
-          </div>
-        </div>
-        <div className="col col-2-md">
-          <div className="testimonial-card">
-            <p>Text</p>
-            <button>Order a delivery</button>
-          </div>
-        </div>
-        <div className="col col-2-md">
-          <div className="testimonial-card">
-            <p>Text</p>
-            <button>Order a delivery</button>
-          </div>
-        </div>
-      </section>
-
-      <section className="footer row">
-        <div className="col col-6-md">
-          <h3>Little Lemon</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-        <div className="col col-6-md"></div>
-      </section>
-    </main>
-  );
+export function updateTimes (_prevState, { date }) {
+    return fetchAPI(new Date(date))
 }
 
-export default Main;
+export function initializeTimes () {
+    return fetchAPI(new Date())
+}
+
+const today = new Date()
+/**
+ * Turn today's date object into a string that works as
+ * the date input's value, i.e. "2024-09-26"
+ */
+const todayFormatted = today.getFullYear() + '-'
+    + ('0' + (today.getMonth()+1)).slice(-2) + '-'
+    + ('0' + today.getDate()).slice(-2)
+
+export default function Main() {
+    const [availableTimes, changeTimes] = useReducer(
+        updateTimes,
+        initializeTimes()
+    )
+
+    const [resDate, setResDate] = useState(todayFormatted)
+    const [resTime, setResTime] = useState()
+    const [guests, setGuests] = useState('1')
+    const [occasion, setOccasion] = useState('')
+    const navigate = useNavigate();
+
+    function submitForm (formData) {
+        const submitted = submitAPI(formData)
+
+        if (submitted) {
+            navigate("/confirmed")
+        }
+    }
+
+    return (
+        <main>
+            <Routes>
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/booking" element={
+                    <Booking
+                        resDate={resDate}
+                        setResDate={setResDate}
+                        resTime={resTime}
+                        setResTime={setResTime}
+                        guests={guests}
+                        setGuests={setGuests}
+                        occasion={occasion}
+                        setOccasion={setOccasion}
+                        availableTimes={availableTimes}
+                        changeTimes={changeTimes}
+                        submitForm={submitForm}
+                    />
+                }></Route>
+                <Route path="/confirmed" element={<ConfirmedBooking />}></Route>
+            </Routes>
+        </main>
+    )
+}

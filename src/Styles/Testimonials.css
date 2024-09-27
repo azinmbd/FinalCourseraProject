@@ -1,0 +1,58 @@
+#testimonials {
+    background: var(--highlight1);
+    padding-top: 4em;
+    padding-bottom: 7em;
+}
+
+#testimonials h2 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-medium);
+    font-size: 36px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.reviews {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.review {
+    background: var(--background);
+    padding: 2em 1.5em;
+}
+
+.review h3 {
+    font-size: var(--size-sm);
+    font-weight: var(--weight-bold);
+    margin-bottom: 1em;
+}
+
+.reviewer {
+    display: flex;
+    flex-flow: row;
+    column-gap: 0.5em;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.reviewer img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 0.35em;
+}
+
+.reviewer .name {
+    font-size: var(--size-sm);
+    font-weight: var(--weight-bold);
+}
+
+.review-text {
+    font-size: var(--size-sm);
+}

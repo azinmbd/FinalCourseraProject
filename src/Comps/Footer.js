@@ -1,27 +1,42 @@
-function Footer() {
-  return (
-    <footer>
-      {" "}
-      <section className="row">
-        <div className="col col-4-md"></div>
-        <div className="col col-4-md">
-          <h3>Department Nav</h3>
-          <li>Home</li>
-          <li>About</li>
-          <li>Menu</li>
-          <li>Reservation</li>
-          <li>Order Online</li>
-          <li>Login</li>
-        </div>
-        <div className="col col-4-md">
-          <h3>Social Media Links</h3>
-          <p>Address</p>
-          <p>Phone Number</p>
-          <p>Email</p>
-        </div>
-      </section>
-    </footer>
-  );
-}
+import '../Styles/Footer.css'
+import { Link } from 'react-router-dom'
 
-export default Footer;
+export default function Footer () {
+    return (
+        <footer>
+            <div className="container">
+                <img
+                    src="/images/restaurantfood.jpg"
+                    alt=""
+                />
+                <article>
+                    <h2>Navigation</h2>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><Link to="/booking">Reservations</Link></li>
+                        <li><a href="#">Order Online</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <h2>Contact</h2>
+                    <ul>
+                        <li><a href="#">Address</a></li>
+                        <li><a href="#">Phone</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <h2>Social Media</h2>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </article>
+            </div>
+        </footer>
+    )
+}

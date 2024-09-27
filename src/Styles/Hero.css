@@ -1,0 +1,40 @@
+#hero {
+    width: 100%;
+    background: var(--primary1);
+    color: var(--highlight1);
+}
+
+#hero-content {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 1em;
+}
+
+@media screen and (max-width: 640px) {
+    #hero-content {
+        flex-flow: column-reverse;
+        padding-top: 2em;
+        padding-bottom: 3em;
+    }
+}
+
+#hero img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 640px) {
+    #hero img {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+#hero article {
+    width: 300px;
+}
+
+#hero .lead-text {
+    margin-bottom: 2em;
+}

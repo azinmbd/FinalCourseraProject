@@ -1,12 +1,15 @@
-import logo from "../assets/Logo.png";
-import Nav from "../Comps/Nav";
-function Header() {
-  return (
-    <header className="header">
-      <img  className="col-2-md" src={logo} width={200} />
-      <Nav />
-    </header>
-  );
-}
+import '../Styles/Header.css'
+import { Link } from 'react-router-dom'
 
-export default Header;
+export default function Header({children}) {
+    return (
+        <header>
+            <div className="container">
+                <Link to="/">
+                    <img src="/images/Logo.svg" alt="" />
+                </Link>
+                {children}
+            </div>
+        </header>
+    )
+}

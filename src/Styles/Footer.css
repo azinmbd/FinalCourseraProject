@@ -1,0 +1,43 @@
+footer {
+    width: 100%;
+    min-height: 300px;
+    background: var(--highlight2);
+    padding: 3em 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5em;
+    flex-wrap: wrap;
+}
+
+footer h2 {
+    font-size: var(--size-xl);
+    font-weight: var(--weight-extrabold);
+    color: var(--highlight1);
+    margin-bottom: 0.5em;
+}
+
+footer article {
+    flex: 1 1 0;
+}
+
+footer img {
+    width: 160px;
+    object-fit: cover;
+}
+
+footer a {
+    color: var(--highlight1);
+}
+
+footer a:hover,
+footer a:focus,
+footer a:active {
+    color: var(--secondary2);
+}
+
+footer li {
+    line-height: 1.5;
+}

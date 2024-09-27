@@ -1,15 +1,15 @@
-// pages/Home.js
-import React from "react";
-import Header from "../Comps/Header";
-import Main from "../Comps/Main";
+import Hero from '../Comps/Hero'
+import Specials from '../Specials'
+import Testimonials from './Testimonials'
+import About from './About'
 
-function Home() {
-  return (
-    <>
-      {/* <Header /> */}
-      <Main />
-    </>
-  );
+export default function Home () {
+    return (
+        <main>
+            <Hero />
+            <Specials />
+            <Testimonials />
+            <About />
+        </main>
+    )
 }
-
-export default Home;

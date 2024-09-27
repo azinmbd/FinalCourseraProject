@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Markazi+Text:wght@400..700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary1: #495E57;
+  --primary2: #F4CE14;
+  --secondary1: #EE9972;
+  --secondary2: #FBDABB;
+  --highlight1: #EDEFEE;
+  --highlight2: #333333;
+  --background: #ffffff;
+  --error: #f63a47;
+
+  --font-display: "Markazi Text", serif;
+  --font-primary: "Karla", sans-serif;
+
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700; 
+  --weight-extrabold: 800;
+
+  --size-sm: 14px;
+  --size-md: 16px;
+  --size-lg: 18px;
+  --size-xl: 20px;
+  --size-2xl: 32px;
+  --size-3xl: 64px;
+}
+
+html, body {
+  font-size: var(--size-md);
+  font-family: var(--font-primary);
+}
+
+a {
+  text-decoration: none;
+  color: var(--highlight2);
+}
+
+a:hover, a:focus, a:active {
+  transition: all ease-out 150ms;
+  opacity: 0.75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.display-title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  font-size: var(--size-3xl);
+  color: var(--primary2);
+  line-height: 1em;
+}
+
+.sub-title {
+  font-family: var(--font-display);
+  font-weight: normal;
+  font-size: var(--size-2xl);
+  line-height: 1em;
+}
+
+.lead-text {
+  font-weight: normal;
+  font-size: var(--size-lg);
+}
+
+.section-title {
+  font-weight: var(--weight-extrabold);
+  font-size: var(--size-xl);
+}
+
+.section-categories {
+  font-weight: var(--weight-extrabold);
+  font-size: var(--size-md);
+}
+
+.card-title {
+  font-weight: var(--weight-bold);
+  font-size: var(--size-lg);
+  color: var(--highlight2);
+}
+
+p, .paragraph {
+  font-size: var(--size-md);
+  line-height: 1.5;
+}
+
+.highlight {
+  font-weight: var(--weight-medium);
+  font-size: var(--size-md);
+  color: var(--secondary1);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border-radius: 1rem;
+}
+
+.button {
+  padding: 0.75em 2em;
+  border-radius: 0.5em;
+  background: var(--primary2);
+  color: var(--highlight2);
+  font-weight: var(--weight-bold);
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  background: var(--secondary1);
+  color: var(--highlight2);
+  transition: all ease-out 150ms;
+  opacity: 1;
+}

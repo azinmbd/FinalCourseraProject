@@ -1,0 +1,9 @@
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+nav a {
+    font-size: 1rem;
+}

@@ -1,12 +1,19 @@
+import '../Styles//Reservation.css'
 import { useState } from 'react'
 
-export default function Reservation() {
-    const [resDate, setResDate] = useState('')
-    const [resTime, setResTime] = useState('')
-    const [guests, setGuests] = useState(1)
-    const [occasion, setOccasion] = useState('')
-    const [availableTimes, setAvailableTimes] = useState(['18:00', '19:00', '20:00'])
-
+export default function Reservation ({
+    resDate,
+    setResDate,
+    resTime,
+    setResTime,
+    guests,
+    setGuests,
+    occasion,
+    setOccasion,
+    availableTimes,
+    changeTimes,
+    submitForm
+}) {
     const [invalidDate, setInvalidDate] = useState(false)
     const [invalidTime, setInvalidTime] = useState(false)
     const [invalidGuests, setInvalidGuests] = useState(false)
@@ -51,36 +58,24 @@ export default function Reservation() {
         setGuests(e.target.value)
     }
 
-    function changeTimes({ date }) {
-        // Simulate fetching new available times based on date
-        if (date === '2024-12-25') {
-            setAvailableTimes(['17:00', '18:00', '19:00'])
-        } else {
-            setAvailableTimes(['18:00', '19:00', '20:00'])
-        }
-    }
-
     function handleSubmit (e) {
-        e.preventDefault()
+        e.preventDefault();
 
         if (!validateDate() || !validateTime() || !validateGuests()) {
             return
         }
 
-        const reservationData = {
+        submitForm({
             resDate,
             resTime,
             guests,
             occasion
-        }
-
-        console.log('Reservation Submitted:', reservationData)
-        // Logic for submitting the form (e.g., API call) can be added here
+        })
     }
 
     return (
-        <div className="reservation-page">
-            <h1 className="display-title">Make a Reservation</h1>
+        <>
+            <h2 className="display-title booking-header">Reserve a table</h2>
             <form className="booking-form" onSubmit={handleSubmit}>
                 <div className="form-item">
                     <label htmlFor="res-date">Date</label>
@@ -98,7 +93,6 @@ export default function Reservation() {
                         </span>
                     )}
                 </div>
-
                 <div className="form-item">
                     <label htmlFor="res-time">Time</label>
                     <select
@@ -109,7 +103,7 @@ export default function Reservation() {
                         onChange={handleTimeChange}
                     >
                         <option value="">Select a time</option>
-                        {availableTimes.map((time) => (
+                        {availableTimes && availableTimes.map((time) => (
                             <option key={time} value={time}>
                                 {time}
                             </option>
@@ -121,7 +115,6 @@ export default function Reservation() {
                         </span>
                     )}
                 </div>
-
                 <div className="form-item">
                     <label htmlFor="guests">Number of guests</label>
                     <input
@@ -139,7 +132,6 @@ export default function Reservation() {
                         <span className="message">Please enter between 1 and 10 guests.</span>
                     )}
                 </div>
-
                 <div className="form-item">
                     <label htmlFor="occasion">Occasion</label>
                     <select
@@ -152,7 +144,6 @@ export default function Reservation() {
                         <option value="anniversary">Anniversary</option>
                     </select>
                 </div>
-
                 <button
                     type="submit"
                     disabled={invalidDate || invalidTime || invalidGuests}
@@ -160,6 +151,6 @@ export default function Reservation() {
                     Make your reservation
                 </button>
             </form>
-        </div>
+        </>
     )
 }
