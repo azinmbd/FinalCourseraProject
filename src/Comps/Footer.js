@@ -1,13 +1,14 @@
-import '../Styles/Footer.css'
-import { Link } from 'react-router-dom'
+import '../Styles/Footer.css';
+import { Link } from 'react-router-dom';
+import restaurantFood from '../assets/restaurantfood.jpg'; 
 
-export default function Footer () {
+export default function Footer() {
     return (
         <footer>
             <div className="container">
                 <img
-                    src="/images/restaurantfood.jpg"
-                    alt=""
+                    src={restaurantFood} 
+                    alt="Restaurant food"
                 />
                 <article>
                     <h2>Navigation</h2>
@@ -38,5 +39,5 @@ export default function Footer () {
                 </article>
             </div>
         </footer>
-    )
+    );
 }

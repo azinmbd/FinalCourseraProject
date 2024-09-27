@@ -1,23 +1,26 @@
 import './Styles/Specials.css'
 import { Link } from 'react-router-dom'
-import DeliveryIcon from './icons/DeliveryIcon'
+
+import margheritaPizza from './assets/margheritapizza.jpg';
+import cheesecake from './assets/cheesecake.jpg';
+import beefBurger from './assets/beefburger.jpg';
 
 const specials = [{
-    name: "Greek salad",
-    price: "$12.99",
-    description: "The famous greek salad of crispy lettuce, peppers, olives, and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-    image: "/images/greeksalad.jpg"
+    name: "Margherita Pizza",
+    price: "$15.99",
+    description: "Classic Margherita pizza with fresh tomatoes, mozzarella cheese, basil, and a drizzle of olive oil.",
+    image: margheritaPizza
 }, {
-    name: "Bruschetta",
-    price: "$5.99",
-    description: "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil",
-    image: "/images/bruschetta.jpg"
+    name: "New York Cheesecake",
+    price: "$8.99",
+    description: "Creamy New York-style cheesecake with a graham cracker crust, topped with fresh berries.",
+    image: cheesecake
 }, {
-    name: "Lemon Dessert",
-    price: "$5.00",
-    description: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
-    image: "/images/lemondessert.jpg"
-}]
+    name: "Classic Beef Burger",
+    price: "$10.99",
+    description: "Juicy beef patty with lettuce, tomato, pickles, cheddar cheese, and our house special sauce in a toasted bun.",
+    image: beefBurger
+}];
 
 export default function Specials () {
     return (
@@ -30,7 +33,7 @@ export default function Specials () {
                 <div className="cards-container">
                     {specials.map((special) => (
                         <article className="card" key={special.name}>
-                            <img src={special.image} alt="" />
+                            <img src={special.image} alt={special.name} />
                             <div className="card-body">
                                 <div className="card-header">
                                     <h3>{special.name}</h3>
@@ -41,7 +44,6 @@ export default function Specials () {
                                 </div>
                                 <div className="card-footer">
                                     Order a delivery
-                                    <DeliveryIcon className='delivery-icon' />
                                 </div>
                             </div>
                         </article>

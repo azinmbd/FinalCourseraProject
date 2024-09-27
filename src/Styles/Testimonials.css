@@ -24,8 +24,18 @@
 
 .review {
     background: var(--background);
-    padding: 2em 1.5em;
+    padding: 2em 1em;
+    border-radius: 0.5em; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
+
+.reviews .review:nth-child(2) {
+    background: #fff9c4; 
+}
+.reviews .review:nth-child(4) {
+    background: #fff9c4; 
+}
+
 
 .review h3 {
     font-size: var(--size-sm);
@@ -42,10 +52,11 @@
 }
 
 .reviewer img {
-    height: 50px;
-    width: 50px;
+    height: 80px; /* Increased height */
+    width: 80px;  /* Increased width */
     object-fit: cover;
-    border-radius: 0.35em;
+    border-radius: 50%; /* Makes the image round */
+    border: 2px solid var(--highlight1); /* Optional border */
 }
 
 .reviewer .name {
