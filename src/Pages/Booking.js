@@ -1,7 +1,8 @@
-import '../Styles/Booking.css'
-import BookingForm from "./Reservation"
+import '../Styles/Booking.css';
+import BookingForm from './Reservation';
+import bookingImage from '../assets/booking.jpg'; // Import the image
 
-export default function Booking ({
+export default function Booking({
     resDate,
     setResDate,
     resTime,
@@ -12,23 +13,32 @@ export default function Booking ({
     setOccasion,
     availableTimes,
     changeTimes,
-    submitForm
+    submitForm,
 }) {
     return (
         <section className="container" id="booking">
-            <BookingForm
-                resDate={resDate}
-                setResDate={setResDate}
-                resTime={resTime}
-                setResTime={setResTime}
-                guests={guests}
-                setGuests={setGuests}
-                occasion={occasion}
-                setOccasion={setOccasion}
-                availableTimes={availableTimes}
-                changeTimes={changeTimes}
-                submitForm={submitForm}
-            />
+            <div className="booking-content">
+
+
+                <div className="booking-form">
+                    <BookingForm
+                        resDate={resDate}
+                        setResDate={setResDate}
+                        resTime={resTime}
+                        setResTime={setResTime}
+                        guests={guests}
+                        setGuests={setGuests}
+                        occasion={occasion}
+                        setOccasion={setOccasion}
+                        availableTimes={availableTimes}
+                        changeTimes={changeTimes}
+                        submitForm={submitForm}
+                    />
+                </div>
+                <div className="booking-image">
+                    <img src={bookingImage} alt="Reservation" />
+                </div>
+            </div>
         </section>
-    )
+    );
 }

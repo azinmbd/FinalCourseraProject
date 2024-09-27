@@ -27,7 +27,7 @@ export default function Specials () {
         <section id="specials">
             <div className="container">
                 <div className="heading">
-                    <h2 className="display-title">Specials</h2>
+                    <h2 >Specials</h2>
                     <Link to="/menu" className="button">Online Menu</Link>
                 </div>
                 <div className="cards-container">

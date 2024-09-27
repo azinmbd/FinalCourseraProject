@@ -25,15 +25,25 @@
 .review {
     background: var(--background);
     padding: 2em 1em;
-    border-radius: 0.5em; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 0.5em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.reviews .review:nth-child(2) {
-    background: #fff9c4; 
+.review:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
 }
+
+.reviews .review:nth-child(2),
 .reviews .review:nth-child(4) {
-    background: #fff9c4; 
+    background: #fff9c4;
+}
+
+.review:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background-color: #f9f9f9; 
 }
 
 

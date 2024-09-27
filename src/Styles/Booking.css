@@ -1,4 +1,30 @@
 #booking {
-    padding-bottom: 5em;
-    padding-top: 2em;
+    padding: 2em 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Ensure content is horizontally spaced */
+    align-items: center; /* Vertically align image and form */
+    gap: 2em;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.booking-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 0.5em;
+}
+
+.booking-form {
+    flex: 1; /* Ensures the form takes the remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

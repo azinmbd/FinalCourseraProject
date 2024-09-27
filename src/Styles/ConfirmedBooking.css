@@ -9,3 +9,26 @@
     text-align: center;
     display: block
 }
+
+#confirmation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4em 0;
+    text-align: center;
+}
+
+.confirmation-image img {
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+    border-radius: 0.5em; 
+    margin-bottom: 2em; 
+}
+
+.display-title {
+    font-size: var(--size-xl);
+    color: var(--primary1);
+    font-weight: var(--weight-bold);
+}
